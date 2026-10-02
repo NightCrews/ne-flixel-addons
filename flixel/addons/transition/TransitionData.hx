@@ -5,7 +5,7 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.tweens.FlxTween.TweenOptions;
 import flixel.util.FlxColor;
-import flixel.system.FlxAssets.FlxGraphicAsset;
+import flixel.util.typeLimit.OneOfThree;
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 
 enum abstract TransitionType(String)
@@ -33,7 +33,7 @@ enum TransitionCameraMode
 
 typedef TransitionTileData =
 {
-	asset:FlxGraphicAsset,
+	asset:OneOfThree<flixel.graphics.FlxGraphic, openfl.display.BitmapData, String>,
 	width:Int,
 	height:Int,
 	?frameRate:Int
